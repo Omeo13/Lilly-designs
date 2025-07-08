@@ -1,62 +1,105 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Lilly Design</title>
-    <!-- Import Dancing Script font from Google Fonts -->
-    <link
-      href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="styles.css" />
-  </head>
-  <body>
-    <!-- Landing Page Wrapper -->
-    <div id="landing-wrapper">
-      <div id="landing-bg"></div>
-      <main id="landing-page">
-        <div class="main-intro-text">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Lilly Design</title>
+  <!-- Import Dancing Script font -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+  <!-- Section 1: Global Layout Wrapper -->
+  <div class="section-1 layout-wrapper">
+    
+    <!-- Section 2: Landing Page -->
+    <div class="section-2-landing">
+      
+      <!-- block-1: Landing background -->
+      <div class="b-1-landing-bg"></div>
+
+      <!-- block-2: Landing main wrapper -->
+      <main class="b-2-landing-main">
+        <!-- block-3: Intro text -->
+        <div class="b-3-intro-txt">
           <h1>Welcome to Lilly Design Studio</h1>
           <p>Creating stunning visuals and user-friendly experiences.</p>
-          <button id="enter-btn" class="enter-button">Enter</button>
         </div>
-        <!-- End .main-intro-text -->
       </main>
-    </div>
 
-    <!-- Main Page Wrapper (initially hidden) -->
-    <div id="main-wrapper" style="display: none">
-      <div id="main-bg"></div>
-      <main id="main-page">
-        <h2>Welcome to the Studio</h2>
-        <p class="main-intro">
-          Good design is inspired, great design is inspiring.
-        </p>
+      <!-- block-4: Lilly icon button (to right of glass box) -->
+      <div class="b-4-lilly-btn" data-js-role="enter">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="89" height="89">
+          <path fill="#000000" d="M256 24c-31.466 48-62.932 96-62.932 160 0 56.794 37.144 113.568 45.514 148h34.836c8.37-34.432 45.514-91.206 45.514-148 0-64-31.466-112-62.932-160zM98.637 206c-47.2 0-78.664 32-78.664 80 0 32 22.115 63.526 62.93 64-15.732-16 .002-64 31.468-64 31.89 0 56.58 21.916 69.253 46h33.828c-13.744-47.52-49.108-126-118.813-126zm314.726 0c-69.705 0-105.07 78.48-118.814 126h33.827c12.673-24.084 37.362-46 69.252-46 31.465 0 47.2 48 31.466 64 40.816-.474 62.93-32 62.93-64 0-48-31.464-80-78.663-80zM153.076 350c-38.705 0-54.44 16-54.44 48 0 16 15.734 48 47.2 48 35.4 0 61.948-27 73.01-54h-35.682c-4.657 3.57-11.5 6-21.596 6-15.733 0-31.464-32-8.492-48zm37.694 0c.017.064.03.127.048.19-13.29 2.16-12.694 23.343 1.793 23.79v.02H319.39l-.003-.02c14.486-.447 15.083-21.63 1.792-23.79.017-.063.03-.126.048-.19H190.77zm168.154 0c22.972 16 7.24 48-8.492 48-10.096 0-16.94-2.43-21.596-6h-35.682c11.062 27 37.61 54 73.01 54 31.466 0 47.2-32 47.2-48 0-32-15.735-48-54.44-48zm-118.656 42c-15.733 16-15.734 48-31.467 64l31.468-16c0 16 0 32 15.732 48 15.733-16 15.732-32 15.732-48l31.467 16c-15.734-16-15.735-48-31.468-64h-31.464z"/>
+        </svg>
+      </div>
 
-        <section class="services">
-          <div class="service-card">
-            <h3>Brand Identity</h3>
-            <p>
-              Custom logos, color palettes, and typography systems tailored to
-              your brand.
-            </p>
-          </div>
-          <div class="service-card">
-            <h3>Web Design</h3>
-            <p>Elegant, responsive websites that feel as good as they look.</p>
-          </div>
-          <div class="service-card">
-            <h3>Graphic Design</h3>
-            <p>
-              Hand-crafted visuals and illustrations to enhance your
-              storytelling.
-            </p>
-          </div>
-        </section>
-      </main>
-    </div>
+    </div> <!-- end .section-2-landing -->
 
-    <script src="lilly.js"></script>
-  </body>
-</html>
+  </div> <!-- end .layout-wrapper -->
+</body>
+
+
+
+<!-- Section 3: Main Content Area (initially hidden) -->
+<div class="section-3-main" style="display: none">
+  <!-- block-1: Background layer -->
+  <div class="b-1-main-bg"></div>
+
+  <!-- block-2: Main content wrapper -->
+  <main class="b-2-main-content">
+    <!-- block-3: Main heading -->
+    <h2 class="b-3-main-header">Welcome to the Studio</h2>
+
+    <!-- block-5: Introductory paragraph -->
+    <p class="b-5-main-intro">
+      Good design is inspired, great design is inspiring.
+    </p>
+
+    <!-- Section 5: Services -->
+    <section class="section-5-services">
+
+      <!-- block-5: Service card -->
+      <div class="b-5-service-card">
+        <h3>
+          Service Title
+          <svg class="b-5-service-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="#B22A1A" aria-hidden="true" focusable="false" width="24" height="24" style="vertical-align: middle; margin-left: 8px;">
+            <path d="M256 24c-31.466 48-62.932 96-62.932 160 0 56.794 37.144 113.568 45.514 148h34.836c8.37-34.432 45.514-91.206 45.514-148 0-64-31.466-112-62.932-160zM98.637 206c-47.2 0-78.664 32-78.664 80 0 32 22.115 63.526 62.93 64-15.732-16 .002-64 31.468-64 31.89 0 56.58 21.916 69.253 46h33.828c-13.744-47.52-49.108-126-118.813-126zm314.726 0c-69.705 0-105.07 78.48-118.814 126h33.827c12.673-24.084 37.362-46 69.252-46 31.465 0 47.2 48 31.466 64 40.816-.474 62.93-32 62.93-64 0-48-31.464-80-78.663-80zM153.076 350c-38.705 0-54.44 16-54.44 48 0 16 15.734 48 47.2 48 35.4 0 61.948-27 73.01-54h-35.682c-4.657 3.57-11.5 6-21.596 6-15.733 0-31.464-32-8.492-48zm37.694 0c.017.064.03.127.048.19-13.29 2.16-12.694 23.343 1.793 23.79v.02H319.39l-.003-.02c14.486-.447 15.083-21.63 1.792-23.79.017-.063.03-.126.048-.19H190.77zm168.154 0c22.972 16 7.24 48-8.492 48-10.096 0-16.94-2.43-21.596-6h-35.682c11.062 27 37.61 54 73.01 54 31.466 0 47.2-32 47.2-48 0-32-15.735-48-54.44-48zm-118.656 42c-15.733 16-15.734 48-31.467 64l31.468-16c0 16 0 32 15.732 48 15.733-16 15.732-32 15.732-48l31.467 16c-15.734-16-15.735-48-31.468-64h-31.464z"/>
+          </svg>
+        </h3>
+        <p>Custom logos, color palettes, and typography systems tailored to your brand.</p>
+      </div>
+
+      <!-- block-5: Service card -->
+      <div class="b-5-service-card">
+        <h3>
+          Service Title
+          <svg class="b-5-service-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="#B22A1A" aria-hidden="true" focusable="false" width="24" height="24" style="vertical-align: middle; margin-left: 8px;">
+            <path d="M256 24c-31.466 48-62.932 96-62.932 160 0 56.794 37.144 113.568 45.514 148h34.836c8.37-34.432 45.514-91.206 45.514-148 0-64-31.466-112-62.932-160zM98.637 206c-47.2 0-78.664 32-78.664 80 0 32 22.115 63.526 62.93 64-15.732-16 .002-64 31.468-64 31.89 0 56.58 21.916 69.253 46h33.828c-13.744-47.52-49.108-126-118.813-126zm314.726 0c-69.705 0-105.07 78.48-118.814 126h33.827c12.673-24.084 37.362-46 69.252-46 31.465 0 47.2 48 31.466 64 40.816-.474 62.93-32 62.93-64 0-48-31.464-80-78.663-80zM153.076 350c-38.705 0-54.44 16-54.44 48 0 16 15.734 48 47.2 48 35.4 0 61.948-27 73.01-54h-35.682c-4.657 3.57-11.5 6-21.596 6-15.733 0-31.464-32-8.492-48zm37.694 0c.017.064.03.127.048.19-13.29 2.16-12.694 23.343 1.793 23.79v.02H319.39l-.003-.02c14.486-.447 15.083-21.63 1.792-23.79.017-.063.03-.126.048-.19H190.77zm168.154 0c22.972 16 7.24 48-8.492 48-10.096 0-16.94-2.43-21.596-6h-35.682c11.062 27 37.61 54 73.01 54 31.466 0 47.2-32 47.2-48 0-32-15.735-48-54.44-48zm-118.656 42c-15.733 16-15.734 48-31.467 64l31.468-16c0 16 0 32 15.732 48 15.733-16 15.732-32 15.732-48l31.467 16c-15.734-16-15.735-48-31.468-64h-31.464z"/>
+          </svg>
+        </h3>
+        <p>Elegant, responsive websites that feel as good as they look.</p>
+      </div>
+
+      <!-- block-5: Service card -->
+      <div class="b-5-service-card">
+        <h3>
+          Service Title
+          <svg class="b-5-service-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="#B22A1A" aria-hidden="true" focusable="false" width="24" height="24" style="vertical-align: middle; margin-left: 8px;">
+            <path d="M256 24c-31.466 48-62.932 96-62.932 160 0 56.794 37.144 113.568 45.514 148h34.836c8.37-34.432 45.514-91.206 45.514-148 0-64-31.466-112-62.932-160zM98.637 206c-47.2 0-78.664 32-78.664 80 0 32 22.115 63.526 62.93 64-15.732-16 .002-64 31.468-64 31.89 0 56.58 21.916 69.253 46h33.828c-13.744-47.52-49.108-126-118.813-126zm314.726 0c-69.705 0-105.07 78.48-118.814 126h33.827c12.673-24.084 37.362-46 69.252-46 31.465 0 47.2 48 31.466 64 40.816-.474 62.93-32 62.93-64 0-48-31.464-80-78.663-80zM153.076 350c-38.705 0-54.44 16-54.44 48 0 16 15.734 48 47.2 48 35.4 0 61.948-27 73.01-54h-35.682c-4.657 3.57-11.5 6-21.596 6-15.733 0-31.464-32-8.492-48zm37.694 0c.017.064.03.127.048.19-13.29 2.16-12.694 23.343 1.793 23.79v.02H319.39l-.003-.02c14.486-.447 15.083-21.63 1.792-23.79.017-.063.03-.126.048-.19H190.77zm168.154 0c22.972 16 7.24 48-8.492 48-10.096 0-16.94-2.43-21.596-6h-35.682c11.062 27 37.61 54 73.01 54 31.466 0 47.2-32 47.2-48 0-32-15.735-48-54.44-48zm-118.656 42c-15.733 16-15.734 48-31.467 64l31.468-16c0 16 0 32 15.732 48 15.733-16 15.732-32 15.732-48l31.467 16c-15.734-16-15.735-48-31.468-64h-31.464z"/>
+          </svg>
+        </h3>
+        <p>Hand-crafted visuals and illustrations to enhance your storytelling.</p>
+      </div>
+
+    </section>
+    <!-- End .section-5-services -->
+
+  </main>
+</div>
+
+<script src="script.js"></script>
+</body>
+

@@ -1,4 +1,4 @@
-/* ===== General styles ===== */
+/* ===== 0. General Styles (Reset, typography, body, globals) ===== */
 body {
   margin: 0;
   padding: 0;
@@ -12,67 +12,146 @@ body {
 }
 
 p {
-  font-size: 1.5rem;
+  font-size: 1.5rem; /* keep for readability */
   color: #000000;
-  margin-top: 10px;
+  margin-top: 13px; /* Fibonacci number instead of 10 */
 }
 
-/* ===== Landing and Main wrapper styles ===== */
-#landing-wrapper,
-#main-wrapper {
+/* ===== 1. Layout Wrapper (.section-1) ===== */
+
+/* Layout wrapper covers full viewport with fixed position */
+.section-1.layout-wrapper {
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
+
+  /* Using viewport units but let's tweak margin/padding with Fibonacci */
   width: 100vw;
   height: 100vh;
+
   background: transparent;
   z-index: 10;
   overflow: auto;
+
+  /* Add small padding using Fibonacci: 13px */
+  padding: 13px;
 }
 
-/* Backgrounds inside wrappers */
-#landing-bg,
-#main-bg {
+.section-3-main {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  width: 100vw;
+  height: 100vh;
+
+  background: transparent;
+  z-index: 10;
+  overflow: auto;
+
+  padding: 13px;
+}
+
+/* Landing background */
+.b-1-landing-bg {
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
+  background-image: url("assets/goldenlilly.jpg");
   background-size: cover;
   background-position: center;
   z-index: -1;
   filter: brightness(0.8);
 }
-
-#landing-bg {
-  background-image: url("assets/goldenlilly.jpg");
+.section-2-landing {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-right: 180px; /* spacing from right edge */
+  gap: 10px; /* space between glass box and icon */
+  min-height: 100vh;
+  box-sizing: border-box;
 }
-
-#main-bg {
-  background-color: #fff;
-  filter: none;
-}
-
-/* ===== Landing Page styles ===== */
-#landing-page {
+/* Landing page main container */
+.b-2-landing-main {
   background: rgba(255, 255, 255, 0.2);
   backdrop-filter: blur(10px);
-  border-radius: 15px;
-  padding: 30px 20px;
-  max-width: 800px;
+  border-radius: 13px;
+  padding: 21px 13px; /* scaled down */
+  max-width: 480px; /* reduced from 610px */
   width: auto;
-  margin: 60px auto; /* center horizontally with margin */
+  margin: 40px auto; /* less vertical margin */
   text-align: center;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   color: #000;
   animation: fadeIn 2s ease forwards;
-  position: relative; /* for any absolute children */
+  position: relative;
 }
 
-/* ===== Main Page styles ===== */
-#main-page {
+.b-3-intro-txt {
+  text-align: center;
+  letter-spacing: 0.08rem; /* slightly tighter */
+  max-width: 380px; /* reduced from 500px */
+  margin: 21px auto 40px auto; /* adjusted margins */
+  padding: 0 13px; /* reduced horizontal padding */
+}
+
+.b-3-intro-txt h1 {
+  font-size: 2rem; /* smaller */
+  letter-spacing: 0.15rem;
+  color: #000000;
+  text-shadow: 1px 1px 2px rgb(247, 181, 38);
+}
+
+.b-3-intro-txt p {
+  font-size: 1.1rem; /* smaller */
+  font-weight: 200;
+  color: #000000;
+  text-shadow: 2px 2px 4px rgb(247, 204, 104);
+  margin-top: 0.5rem;
+  letter-spacing: 0.08rem;
+}
+
+/* Enter button */
+.b-4-lilly-btn {
+  width: 89px;
+  height: 89px;
+  cursor: pointer;
+  flex-shrink: 0;
+  filter: drop-shadow(0 0 8px gold); /* gold glow */
+  transition: transform 0.3s ease;
+}
+
+.b-4-lilly-btn:hover {
+  transform: scale(1.1);
+  filter: drop-shadow(0 0 12px #ffd700);
+}
+
+/* ===== 3. Main Page (.section-3-main) ===== */
+
+/* Main wrapper background */
+/* ===== 3. Main Page (.section-3-main) ===== */
+
+/* Main background */
+.b-1-main-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #fff;
+  z-index: -1;
+  filter: none;
+}
+
+/* Main content container */
+.b-2-main-content {
   position: relative;
   min-height: 100vh;
   width: 100vw;
@@ -82,26 +161,23 @@ p {
   overflow: visible;
 }
 
-/* Main page background overlay */
-#main-page::before {
+/* Background overlay image */
+.b-2-main-content::before {
   content: "";
-  position: fixed; /* keep background fixed */
+  position: fixed;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
   background: url("assets/whitelilly.jpg") no-repeat center center fixed;
   background-size: cover;
-  /*filter: grayscale(100%);
-  opacity: 0.7;*/
   z-index: -1;
 }
 
-/* Headings */
-#main-page h2 {
+/* Main header */
+.b-3-main-header {
   position: relative;
   top: -25px;
-  left: 0;
   margin: 0 auto 20px auto;
   max-width: 700px;
   font-size: 3rem;
@@ -112,16 +188,14 @@ p {
   text-shadow: 4px 4px 6px rgba(0, 0, 0, 0.3);
 }
 
-/* Main intro paragraph */
-#main-page .main-intro {
+/* Intro paragraph */
+.b-5-main-intro {
   position: relative;
   top: -45px;
-  left: 0;
   max-width: 800px;
   margin: 0 auto 1px auto;
   font-weight: 200;
   font-size: 1.2rem;
-  font-style: bold;
   text-align: center;
   text-decoration: underline;
   text-shadow: 0.5px 0.5px 1px rgb(232, 211, 52);
@@ -130,39 +204,45 @@ p {
   color: #000000;
 }
 
-/* Services section */
-.services {
+/* ===== 5. Services Section (.section-5-services) ===== */
+
+.section-5-services {
   position: relative;
   max-width: 1100px;
   margin: 0 auto;
 }
 
 /* Individual service cards */
-.service-card {
+.b-5-service-card {
   position: relative;
-
   margin-bottom: 40px;
-  /* float cards left to arrange horizontally */
   float: left;
   margin-right: 30px;
 }
 
-/* Remove margin-right for last card */
-.service-card:last-child {
+.b-5-service-card:last-child {
   margin-right: 0;
 }
 
-/* Service headings */
-.service-card h3 {
+/* Service card heading */
+.b-5-service-card h3 {
   margin-bottom: 10px;
   color: #000000;
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
   letter-spacing: 0.1em;
   font-weight: 500;
 }
+.b-5-service-icon {
+  width: 21px; /* or 23, depending on your design */
+  height: auto;
+  vertical-align: baseline;
+  position: relative;
+  top: -3px; /* adjust this number to fine-tune alignment */
+  margin-left: 8px; /* spacing from heading text */
+}
 
-/* Service paragraphs */
-.service-card p {
+/* Service card paragraph */
+.b-5-service-card p {
   color: #000000;
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
   font-size: 1.1rem;
@@ -172,147 +252,82 @@ p {
   max-width: 320px;
 }
 
-/* Service card specific colors - override with inline styles or more specific classes if needed */
-.service-card:nth-child(1) h3 {
-  font-size: 1.4rem;
-  font-weight: 800;
-  color: #833131;
-  position: absolute;
-  top: -45px; /* adjust */
-  left: 340px; /* adjust */
-  white-space: nowrap;
-  overflow: visible;
-  width: auto;
-  max-width: none;
-  letter-spacing: 0.1rem;
-}
-
-.service-card:nth-child(2) h3 {
+/* Service card: custom color + position overrides */
+.b-5-service-card:nth-child(1) h3 {
   font-size: 1.4rem;
   font-weight: 800;
   color: #7f2f03;
   position: absolute;
-  top: 50px; /* adjust */
-  left: -90px; /* adjust */
+  top: -45px;
+  left: 350px;
   white-space: nowrap;
-  overflow: visible;
-  width: auto;
-  max-width: none;
   letter-spacing: 0.1rem;
 }
 
-.service-card:nth-child(3) h3 {
+.b-5-service-card:nth-child(2) h3 {
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: #7f2f03;
+  position: absolute;
+  top: 50px;
+  left: -90px;
+  white-space: nowrap;
+  letter-spacing: 0.1rem;
+}
+
+.b-5-service-card:nth-child(3) h3 {
   font-size: 1.4rem;
   font-weight: 800;
   color: #871b1b;
   position: absolute;
-  top: 120px; /* adjust */
-  left: 590px; /* adjust */
+  top: 120px;
+  left: 590px;
   white-space: nowrap;
-  overflow: visible;
-  width: auto;
-  max-width: none;
   letter-spacing: 0.15rem;
 }
 
-.service-card:nth-child(1) p {
-  color: #000000;
+.b-5-service-card:nth-child(1) p {
   position: absolute;
-  top: 10px; /* adjust */
-  left: 300px; /* adjust */
-  white-space: nowrap;
-  overflow: visible;
-  width: auto;
-  max-width: none;
-  letter-spacing: 0.15rem;
+  top: 10px;
+  left: 300px;
   font-size: 1.3rem;
-  text-shadow: 0.5px 0.5px 1px rgb(232, 211, 52);
-}
-
-.service-card:nth-child(2) p {
   color: #000000;
-  position: absolute;
-  top: 100px; /* adjust */
-  left: -140px; /* adjust */
-  white-space: nowrap;
-  overflow: visible;
-  width: auto;
-  max-width: none;
   letter-spacing: 0.15rem;
-  font-size: 1.3rem;
   text-shadow: 0.5px 0.5px 1px rgb(232, 211, 52);
+  white-space: nowrap;
 }
 
-.service-card:nth-child(3) p {
-  color: #000000;
+.b-5-service-card:nth-child(2) p {
   position: absolute;
-  top: 175px; /* adjust */
-  left: 550px; /* adjust */
+  top: 100px;
+  left: -140px;
+  font-size: 1.3rem;
+  color: #000000;
+  letter-spacing: 0.15rem;
+  text-shadow: 0.5px 0.5px 1px rgb(232, 211, 52);
   white-space: nowrap;
-  overflow: visible;
-  width: auto;
-  max-width: none;
+}
+
+.b-5-service-card:nth-child(3) p {
+  position: absolute;
+  top: 175px;
+  left: 550px;
+  font-size: 1.3rem;
+  color: #000000;
   letter-spacing: 0.1rem;
-  font-size: 1.3rem;
   text-shadow: 0.5px 0.5px 1px rgb(232, 211, 52);
+  white-space: nowrap;
 }
 
-/* Clear floats after services */
-.services::after {
+/* Clear floats */
+.section-5-services::after {
   content: "";
   display: block;
   clear: both;
 }
 
-/* Main intro text container (Landing page) */
-.main-intro-text {
-  text-align: center;
-  letter-spacing: 0.1rem;
-  max-width: 800px;
-  margin: 40px auto 60px auto;
-  padding: 0 20px;
-}
+/* ===== 9. Utility classes and animations ===== */
 
-/* Landing page h1 */
-.main-intro-text h1 {
-  font-size: 2rem;
-  letter-spacing: 0.5rem;
-  color: #000000;
-  text-shadow: 1px 1px 2px rgb(247, 181, 38);
-}
-
-/* Landing page paragraph */
-.main-intro-text p {
-  font-size: 1.4rem;
-  font-weight: 100;
-  color: #000000;
-  text-shadow: 2px 2px 4px rgb(247, 204, 104);
-  margin-top: 10px;
-  letter-spacing: 0.3rem;
-}
-
-/* Enter button */
-.enter-button {
-  margin-top: 20px;
-  padding: 15px 30px;
-  font-size: 1.5rem;
-  color: #0a0a09;
-  background: rgba(255, 255, 255, 0.2);
-  backdrop-filter: blur(10px);
-  border: 2px solid #cba31d;
-  border-radius: 10px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-
-.enter-button:hover {
-  color: #fff;
-  background: rgba(255, 215, 0, 0.3);
-  box-shadow: 0 0 15px 5px rgba(255, 215, 0, 0.8);
-  border-color: #ffd700;
-}
-
-/* Fade-in / fade-out classes */
 .fade-out {
   opacity: 0;
   pointer-events: none;
@@ -325,12 +340,13 @@ p {
   animation: fadeIn 1s forwards;
 }
 
-#landing-page,
-#main-page {
+/* Apply fade transition to landing and main content blocks */
+.b-2-landing-main,
+.b-2-main-content {
   transition: opacity 1s ease;
 }
 
-/* Keyframe animation */
+/* Fade-in animation */
 @keyframes fadeIn {
   from {
     opacity: 0;
